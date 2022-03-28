@@ -1,0 +1,631 @@
+<!-- {%load static%} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Techela</title>
+
+      
+  <!-- <link rel="stylesheet" href="./style.css"> -->
+
+      
+      <!-- stylesheet -->
+      <link rel="stylesheet" href="./static/landing.css">
+
+      <!-- use cdn for the library / link the library file -->
+      <script src="https://cdn.jsdelivr.net/npm/baffle@0.3.6/dist/baffle.min.js"></script>
+
+      <!-- google fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Syncopate&display=swap" rel="stylesheet">
+
+      <!-- bootstrap -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+      <!-- icons -->
+      <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+
+      <!-- for on scroll animations -->
+      <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+      <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"></script>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0MMJELPNZ1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0MMJELPNZ1');
+</script>
+
+<!-- Partial : index.partial.html -->
+
+<!-- Scripts for 3js folders -->
+<script type="x-shader/x-vertex" id="vertexshader">
+
+      attribute float size;
+      attribute vec3 customColor;
+      varying vec3 vColor;
+    
+      void main() {
+    
+        vColor = customColor;
+        vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+        gl_PointSize = size * ( 300.0 / -mvPosition.z );
+        gl_Position = projectionMatrix * mvPosition;
+    
+      }
+    
+    </script>
+    <script type="x-shader/x-fragment" id="fragmentshader">
+    
+     uniform vec3 color;
+     uniform sampler2D pointTexture;
+    
+     varying vec3 vColor;
+    
+     void main() {
+    
+       gl_FragColor = vec4( color * vColor, 1.0 );
+       gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
+    
+     }
+    </script>
+    
+
+    <div id="magic"></div>
+    <div class="playground">
+      <div class="bottomPosition">
+         
+            <h1 class="special">Future is now<br><span class="minText">SIT - PUNE</span></h1>
+      </div>
+    </div>
+    <!-- partial -->
+    
+   
+
+
+<body>
+      <div id="loader"></div>
+      <a name="home"></a>
+      <div class="wrapper">
+
+            
+
+           
+            <!-- <div class="header">
+                  
+                  <h1 class="data">TECHELA</h1>
+            </div> -->
+
+           
+
+            <nav class="nav">
+                  <span id="brand">
+                        <a href="index.html"></a>
+                  </span>
+
+                  <a class="navbar-brand" href="/">
+                        <div class="logo-image">
+                              <img src="https://i.ibb.co/t850HSj/logo-PNG-White-01.png" class="img-fluid avi">
+                        </div>
+                  </a>
+
+
+                  <ul id="menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="/about_new">About us</a></li>
+                        <li><a href="/sponsors">Sponsors</a></li>
+                        <li><a href="/pevents_list">Our Speakers</a></li>
+                        <li><a href="/events_list">Our Team</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                  </ul>
+
+                  <div id="toggle">
+                        <div class="span">menu</div>
+                  </div>
+
+            </nav>
+
+            <div id="resize">
+                  <div class="close-btn">close</div>
+
+                  <ul id="menu">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="/about_new">About us</a></li>
+                        <li><a href="/sponsors">Sponsors</a></li>
+                        <li><a href="#event">Our Speakers</a></li>
+                        <li><a href="/events_list">Our Team</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                  </ul>
+            </div>
+
+            
+
+            <div class="content">
+
+            
+
+            <a name="about"></a>
+
+           
+           <section class="story">
+      
+
+                  <div class="container-fluid">
+
+                        <div class="section-data">
+
+                              <div class="row">
+                                    <div class="col-md-2"></div>
+                                    <div class="col-md-2 section-index wow fadeInUp" data-wow-delay="0.3s">01</div>
+                                    <div class="col-md-8 section-heading-about wow fadeInUp" data-wow-delay="0.4s">About Us</div>
+                              </div>
+
+                              <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-6 section-subheading wow fadeInUp" data-wow-delay="0.5s"><h1>Symbiosis’s annual congregation for socially inept tech-geeks. An open invitation for everyone to showcase their gaming and hacking expertise</h1></div>
+                              </div>
+
+                              <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-6 section-info wow fadeInUp" data-wow-delay="0.6s">Techela is the official techfest of the CS/IT Department of Symbiosis Institute of Technology which is organized by its student body. Along with serving as a platform for students to evolve and exhibit their technical prowess, Techela is known for its diverse sub-events ranging from workshops and hackathons to FPS gaming-jams and meme wars.</div>
+                              </div>
+
+                              <div class="row">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-8 more wow fadeInUp" data-wow-delay="0.7s">
+                                          <button class="button" onclick="window.location.href='{% url /'about_new' %}';">Know more</button>
+                                    </div>
+                              </div>
+
+                        </div>
+
+                  </div>
+
+           </section>
+
+           
+
+            <a name="sponsor"></a>
+
+           <section class="sponsors">
+
+            <div class="container-fluid">
+
+                  <div class="section-data">
+
+                        <div class="row">
+                              <div class="col-md-2"></div>
+                              <div class="col-md-2 section-index wow fadeInUp" data-wow-delay="0.3s">02</div>
+                              <div class="col-md-8 section-heading-sponsor wow fadeInUp" data-wow-delay="0.4s">Our Sponsors</div>
+                        </div>
+
+                        <div class="row service">
+                        
+                              <div class="cardy 1 dhan">
+                                    <div class="card_image"> <img src="https://i.ibb.co/N7SCQD7/GFG-LOGO-3-1.png" /> </div>
+                                    <div class="card_title title-white">
+                                      <p></p>
+                                    </div>
+                                    <div class="card-body event-title">
+                                    <h5 class="text-center">Geek For Geeks</h5>
+                                    </div>
+                                  </div>
+                                  
+                                    <div class="cardy 2">
+                                    <div class="card_image">
+                                      <img src="https://i.ibb.co/CbNTVSp/Vishwa-Guru.png" />
+                                      </div>
+                                    <div class="card_title title-white">
+                                      <p></p>
+                                    </div>
+                                    <div class="card-body event-title">
+                                    <h5 class="text-center">VishwaGuru Tech</h5>
+                                    </div>
+                                  </div>
+                                  
+                        </div>
+                        <div class="RegisterButton"><br>
+                        
+                              <button class="button1" onclick="window.location.href='/sponsors';">All Sponsors</button>
+                        </div>
+
+                        
+                  </div>
+
+            </div>
+
+           </section>
+
+           
+
+            <a name="event"></a>
+
+            <section class="event">
+
+                  <div class="container-fluid">
+
+                        <div class="row">
+                              <div class="col-md-2"></div>
+                              <div class="col-md-2 section-index wow fadeInUp" data-wow-delay="0.3s">02</div>
+                              <div class="col-md-8 section-heading-event wow fadeInUp event-avi" data-wow-delay="0.4s">Our Events</div>
+                        </div>
+
+                        <div class="row members">
+
+                              <div class="col-md-4"></div>
+                              
+
+                              <div class="col-md-3 wow fadeInUp" data-wow-delay="0.5s">
+                                   <a href="/pevents_list"> <div class="event-member">
+                                          <div class="event-img event-one">
+                                            
+                                          </div></a>
+                                          
+                                    </div>
+                                    <div class="event-title">
+                                          <h5>Pre Techela Events</h5>
+                                          <span>When I play fighting games, I press random buttons and hope for the rest. <br> Keep calm and game on!!</span>
+                                    </div>
+                              </div>
+
+                              <div class="col-md-3 wow fadeInUp" data-wow-delay="0.6s">
+                                          <a href="/events_list"><div class="event-member">
+                                                <div class="event-img event-two"></div>
+                                          </div></a>
+                                          <div class="event-title">
+                                  <h5>Techela Events</h5>
+                                                <span>Cherry picked bad codes from the deepest parts of the internet are taken in order to test your competance against time</span>
+                                          </div>
+                                    </div>
+                                    
+                        </div></a>
+<div class="RegisterButton">
+      <button class="button1" onclick="window.location.href='{% url 'event_list' %}';">Know more</button>
+</div>
+                  </div>
+
+            </section>
+            
+            
+
+           {% comment %} <section class="newsletter">
+
+                  <div class="container">
+
+                        <div class="row">
+                              <div class="col-md-12">
+                                    <div class="news-data">
+                                    <div class="section-subheading">
+                                          <h1 class="wow fadeInUp" data-wow-delay="0.3s">The Organising Committee</h1>
+                                    </div>
+
+                                    <div class="wow fadeInUp" data-wow-delay="0.4s">
+                                          <span class="btn">
+                                                <button class="btn" type="submit">Click Here</button>
+                                          </span>
+                                    </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                  </div>
+
+           </section> {% endcomment %}
+
+
+            
+
+            <a name="contact"></a>
+
+            <section class="contact">
+
+                  <div class="container-fluid">
+
+                        <div class="row">
+                              <div class="col-md-2"></div>
+                              <div class="col-md-2 section-index wow fadeInUp" data-wow-delay="0.3s">03</div>
+                              <div class="col-md-8 section-heading-contact wow fadeInUp" data-wow-delay="0.4s">Contact us</div>
+                        </div>
+
+                        <div class="row">
+                              <div class="col-md-4"></div>
+                              <div class="col-md-6 icon-title wow fadeInUp" data-wow-delay="0.5s">Get in Touch !  </div>
+                        </div>
+
+                        <div class="row">
+                              <div class="col-md-4"></div>
+                              <div class="col-md-6">
+                                    <form name="contact-form" id="contact-form">
+                                   
+                                          <ul>
+
+                                                <li class="wow fadeInUp" data-wow-delay="0.6s">
+                                                      <label for="contact-name">Name :</label>
+                                                      <div class="textarea">
+                                                            <input type="text" name="name" id="contact-name" value="" required>
+                                                      </div>
+                                                </li>
+
+                                                <br>
+
+                                                <li class="wow fadeInUp" data-wow-delay="0.6s">
+                                                      <label for="contact-name">Mobile Number :</label>
+                                                      <div class="textarea">
+                                                            <input type="number" name="mobile" id="contact-mobile" value="" required>
+                                                      </div>
+                                                </li>
+
+                                                <br>
+
+                                                <li class="wow fadeInUp" data-wow-delay="0.7s">
+                                                      <label for="contact-email">E-mail :</label>
+                                                      <div class="textarea">
+                                                            <input type="email" name="email" id="contact-email" value="" required>
+                                                      </div>
+                                                </li>
+
+                                                <br>
+
+                                                <li class="wow fadeInUp" data-wow-delay="0.8s">
+                                                     <label for="contact-project">Message :</label> 
+                                                     <div class="textarea">
+                                                     <textarea name="message" id="contact-project" rows="3" required></textarea>
+                                                     </div>
+                                                </li>
+
+                                          </ul>
+
+                                          {% comment %} <button  name="contact-submit" id="contact-submit" class="button wow fadeInUp" data-wow-delay="0.9s">Send Message</button> {% endcomment %}
+
+                                    </form>
+                              </div>
+                        </div>
+
+                  </div>
+
+            </section>
+
+            
+
+            <div class="footer">
+
+                  <div class="container">
+
+                        <div class="info">
+
+                              <div class="row">
+                                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.3s" id="address">
+                                          <p>Our Address</p>
+                                          <h4>Symbiosis Institute Of Technology</h4>
+                                          <h4> Near Lupin Research Park,</h4>
+                                          <h4> Lavale 412115</h4>
+
+                                          <br><br>
+                                    </div>
+
+                                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.4s" id="media">
+                                          <ul>
+                                                
+
+                                                <a href="https://www.instagram.com/techela.csit/"><li ><ion-icon name="logo-instagram" class="sit"></ion-icon></li></a>
+                                                <a href="https://www.youtube.com/channel/UCCWzAl2aHLxyOcApa--cmBw/featured"><li><ion-icon name="logo-youtube" class="sit"></ion-icon></li></a>        
+                                                <a href="https://www.linkedin.com/company/techela/"><li><ion-icon name="logo-linkedin" class="sit"></ion-icon></li></a>
+                                                <a href="https://www.facebook.com/techela.6.0"><li><ion-icon name="logo-facebook" class="sit"></ion-icon></li></a>
+                                                
+                                          </ul>
+
+                                          <br><br>
+                                    </div>
+
+                                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.5s" id="mail">
+                                          <p>Contact Us</p>
+                                        <h4>Aayushi Verma <br>Head Of Publicity <br> +91 7043214270 </h4><br>
+                                                                                    
+                                    </div>
+                                    
+                                    <div class="col-md-12">
+                                    <h5 class="text-center" style="color:white;">Copyright  &#169; Techela 2021</h5>
+                                    <h5 class="text-center" style="color:white;">Designed and Developed by <a href="https://www.linkedin.com/in/avi-shah-589279146/"> Avi Shah </a> , <a href="https://www.linkedin.com/in/jinay-sheth-5ba269187/"> Jinay Sheth </a> & <a href="https://www.linkedin.com/in/tanvipathak"> Tanvi Pathak </a> </h5> 
+                              </div>
+                              </div>
+
+                        </div>
+
+                  </div>
+
+            </div>
+
+            
+
+            </div>
+
+      </div>
+      
+      <script type="text/javascript">
+
+            const text = baffle(".data");
+            text.set({
+                  characters : '█▓█ ▒░/▒░ █░▒▓/ █▒▒ ▓▒▓/█ ░█▒/ ▒▓░ █<░▒ ▓/░>',
+                  speed: 120
+            });
+            text.start();
+            text.reveal(4000,2200);
+      
+            </script>
+      
+
+      <script type="text/javascript">
+        
+            var loader;
+            function loadNow(opacity) {
+                if(opacity <= 0) {
+                    displayContent();
+                }
+                else {
+                    loader.style.opacity = opacity;
+                    window.setTimeout(function() {
+                        loadNow(opacity - 0.05)
+                    }, 100);
+                }
+            }
+            
+            function displayContent() {
+                loader.style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+                console.log(document.getElementsByCLassName('content').style.display);
+            }
+            
+            document.addEventListener("DOMContentLoaded", function() {
+                loader = document.getElementById('loader');
+                loadNow(1);
+            });
+            
+        </script>
+    <script src="./static/three.min.js"></script>
+      
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js'></script>
+    <script  src="./script.js"></script>
+
+    <!-- <script>
+    let scene, camera, renderer, stars, starGeo;
+
+    function init() {
+
+      scene = new THREE.Scene();
+
+      camera = new THREE.PerspectiveCamera(60,window.innerWidth / window.innerHeight, 1, 1000);
+      camera.position.z = 2;
+      camera.rotation.x = Math.PI/2;
+
+      renderer = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      starGeo = new THREE.Geometry();
+      for(let i=0;i<6000;i++) {
+        star = new THREE.Vector3(
+          Math.random() * 600 - 300,
+          Math.random() * 600 - 300,
+          Math.random() * 600 - 300
+        );
+        star.velocity = 0;
+        star.acceleration = 0.02;
+        starGeo.vertices.push(star);
+      }
+
+      let sprite = new THREE.TextureLoader().load( 'https://i.ibb.co/C8z0RKW/star.png' );
+      let starMaterial = new THREE.PointsMaterial({
+        color: 0xaaaaaa,
+        size: 0.9,
+        map: sprite
+      });
+
+      stars = new THREE.Points(starGeo,starMaterial);
+      scene.add(stars);
+
+      window.addEventListener("resize", onWindowResize, false);
+
+      animate(); 
+    }
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+    function animate() {
+      starGeo.vertices.forEach(p => {
+        p.velocity += p.acceleration
+        p.y -= p.velocity;
+        
+        if (p.y < -200) {
+          p.y = 200;
+          p.velocity = 0;
+        }
+      });
+      starGeo.verticesNeedUpdate = true;
+      stars.rotation.y +=0.008;
+    
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+    init();
+    
+    </script> -->
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script> 
+ 
+//   navigation starts here
+ $("#toggle").click(function() {
+             $(this).toggleClass('on');
+             $("#resize").toggleClass("active");
+       });
+       $("#resize ul li a").click(function() {
+             $(this).toggleClass('on');
+             $("#resize").toggleClass("active");
+       });
+       $(".close-btn").click(function() {
+             $(this).toggleClass('on');
+             $("#resize").toggleClass("active");
+       });
+
+$(function () {
+  $(document).scroll(function () {
+    var $nav = $(".nav");
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+  });
+});
+
+new WOW().init();
+
+// Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+       // Does a scroll target exist?
+       if (target.length) {
+         // Only prevent default if animation is actually gonna happen
+         event.preventDefault();
+         $('html, body').animate({
+           scrollTop: target.offset().top
+         }, 1000, function() {
+          // Callback after animation
+      //     Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+
+
+</script> 
+
+
+
+</body>
+</html>
